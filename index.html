@@ -4,41 +4,64 @@
   <meta charset="UTF-8">
   <title>نامه قفل‌شده</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Tahoma', sans-serif;
-      background: url('https://i.imgur.com/I3r6Xwr.jpg') no-repeat center center fixed;
-      background-size: cover;
       direction: rtl;
       text-align: center;
-      padding: 50px;
-      color: #3a2f2f;
+      color: #fff;
+    }
+
+    /* ویدیو پس‌زمینه */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      right: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.3) grayscale(0.4);
     }
 
     .box {
-      background-color: rgba(255, 248, 220, 0.9);
-      border: 4px solid #5b3e2b;
+      background-color: rgba(33, 24, 18, 0.8);
+      border: 3px solid #8b5e3c;
       padding: 60px 30px;
       max-width: 500px;
-      margin: auto;
+      margin: 100px auto;
       border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #f3e6d0;
     }
 
     input[type="text"] {
       width: 80%;
-      padding: 10px;
+      padding: 12px;
       font-size: 18px;
-      margin-top: 20px;
+      margin-top: 10px;
       border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #aaa;
       text-align: center;
+      background: #f9f4ef;
+      color: #3a2f2f;
     }
 
     .lock-btn {
-      background-color: #5b3e2b;
+      background-color: #8b5e3c;
       color: #fff;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 18px;
       border-radius: 5px;
       cursor: pointer;
@@ -47,11 +70,11 @@
     }
 
     .lock-btn:hover {
-      background-color: #3e2a1a;
+      background-color: #5e3b23;
     }
 
     .error {
-      color: darkred;
+      color: #ffbaba;
       margin-top: 15px;
       font-size: 16px;
     }
@@ -59,6 +82,13 @@
 </head>
 <body>
 
+  <!-- ویدیوی پس‌زمینه -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="https://videos.pexels.com/video-files/6014535/6014535-uhd_2732_1440_24fps.mp4" type="video/mp4">
+    مرورگر شما از پخش این ویدیو پشتیبانی نمی‌کند.
+  </video>
+
+  <!-- جعبه قفل -->
   <div class="box">
     <h2>برای باز شدن قفل، رمز را وارد کن:</h2>
     <input type="text" id="codeInput" placeholder="عبارت را وارد کنید...">
