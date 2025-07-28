@@ -2,88 +2,93 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>دسترسی محرمانه</title>
+  <title>یادداشت ۱۹ اکتبر</title>
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: #1f1f1f;
+      background: #ede0c8 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       font-family: 'Special Elite', monospace;
+      color: #2a1f14;
+      padding: 50px;
       direction: rtl;
-      color: #e3dfd1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      line-height: 2;
+      overflow: hidden;
     }
 
-    .box {
-      background: #f5f0e1;
+    .glitch-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      animation: flicker 0.2s infinite;
+      z-index: 100;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.04; transform: scale(1); }
+      50% { opacity: 0.07; transform: scale(1.01); }
+      100% { opacity: 0.03; transform: scale(1); }
+    }
+
+    .notebook {
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(255,255,255,0.85);
       padding: 40px;
-      border: 5px double #3a2d1e;
-      border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.6);
-      text-align: center;
-      width: 400px;
+      border: 1px solid #bfa680;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      position: relative;
+      animation: glitchIn 1.5s ease;
     }
 
-    h2 {
-      margin-bottom: 20px;
-      color: #1a1a1a;
+    .date {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #6a4f37;
+      border-bottom: 1px dashed #8b6e4a;
+      padding-bottom: 10px;
     }
 
-    input {
-      padding: 10px;
-      width: 80%;
-      font-size: 18px;
-      border: 2px solid #3a2d1e;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      direction: rtl;
-      text-align: center;
-    }
-
-    button {
-      padding: 10px 25px;
-      font-size: 18px;
-      font-family: inherit;
-      background-color: #3a2d1e;
-      color: #f5f0e1;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #5a4030;
-    }
-
-    .error {
-      color: darkred;
-      margin-top: 10px;
+    @keyframes glitchIn {
+      0% {
+        transform: scale(1.2) rotateX(90deg);
+        opacity: 0;
+        filter: blur(5px);
+      }
+      100% {
+        transform: scale(1) rotateX(0deg);
+        opacity: 1;
+        filter: blur(0);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>🔒 ورود به دفترچه</h2>
-    <input type="text" id="code" placeholder="عبارت عبور را وارد کنید">
-    <br>
-    <button onclick="checkCode()">ورود به دفترچه</button>
-    <div id="error" class="error"></div>
+  <div class="glitch-overlay"></div>
+  <div class="notebook">
+    <div class="date">یادداشت - ۱۹ اکتبر ۲۰۰۰ – ساعت ۳:۴۵ ظهر</div>
+    <p>همین چند دقیقه پیش بود که مثل همیشه، توی حیاط پشت خونه نشسته بودم؛ قلم‌مو توی دستم، بومِ سفید رو به روی من، و اون تصویری که هیچ‌وقت کامل نمی‌شه.</p>
+    <p>این تصویر، چهره نداره... چهره‌ش هیچ‌وقت توی ذهنم شکل نگرفت. شاید چون هیچ‌وقت اجازه نداد ببینمش...</p>
+    <p>شاید چون همیشه، دقیقاً از همون فاصله‌ای نگاهم می‌کرد که یک قدم جلوتر، همه چیز لو می‌رفت. انگار می‌دونه چقدر باید دور بمونه...</p>
+    <p>و من هنوز نمی‌دونم از کجا می‌فهمه...</p>
+    <p>وقتی امروز داشتم با نوک قلم، سایه‌های تیره روی بوم می‌کشیدم، برای اولین بار به وضوح دیدمش. پشت درخت، آن‌سوی خیابون. ایستاده بود.</p>
+    <p>آروم، بدون حرکت. موهای بلندش مثل پر کلاغ، در باد تکون می‌خورد و قد بلندش... فقط همین دوتا چیز بودن که از دور به چشم می‌اومدن...</p>
+    <p>و برای من، همین دو تکه‌ی گنگ، تمامش بودن.</p>
+    <p>دستم برای لحظه‌ای از روی بوم جدا شد. نه از ترس، از تکرار.</p>
+    <p>چند وقته داره دنبال می‌کنه منو؟ چند هفته؟ چند ماه؟ نمی‌دونم. فقط می‌دونم که هنوز به کسی چیزی نگفتم. حتی به استیو.</p>
+    <p>امروز زودتر برمی‌گرده خونه... باید نقاشی رو قایم کنم. نمی‌خوام ببینه. نمی‌خوام بدونه...</p>
+    <p>اون فقط الکی نگران میشه، شروع می‌کنه به محافظت کردن، کنترل کردن... مثل همیشه.</p>
+    <p>خودم می‌تونم از پسش بربیام... فقط یه سایه‌ست، نه؟ فقط یه مرد پشت درخت. نه صدا، نه چهره. فقط سکوت و سیاهی.</p>
+    <p>خب، دیگه وقتشه بلند شم. رنگ روی دست‌هام خشک شده. همه‌چی باید مثل همیشه به نظر بیاد. امشب نباید چیزی عوض بشه. نه برای استیو، نه برای من.</p>
   </div>
-
-  <script>
-    function checkCode() {
-      const input = document.getElementById('code').value.trim();
-      if (input === "اصرار فاش می‌شوند") {
-        window.location.href = "journal.html";
-      } else {
-        document.getElementById('error').textContent = "عبارت عبور نادرست است.";
-      }
-    }
-  </script>
 </body>
 </html>
