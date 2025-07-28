@@ -2,93 +2,84 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>یادداشت ۱۹ اکتبر</title>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <title>راز گشوده شد</title>
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
   <style>
     body {
-      background: #ede0c8 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-      font-family: 'Special Elite', monospace;
-      color: #2a1f14;
-      padding: 50px;
+      font-family: 'Vazir', sans-serif;
+      background: linear-gradient(rgba(60, 43, 28, 0.7), rgba(60, 43, 28, 0.8)),
+                  url('https://i.imgur.com/vDuMTJG.jpg') no-repeat center center fixed;
+      background-size: cover;
       direction: rtl;
-      line-height: 2;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      color: #2e1b13;
+      animation: fadeIn 2s ease;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 100px auto;
+      background-color: rgba(255, 250, 240, 0.95);
+      padding: 60px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      position: relative;
       overflow: hidden;
     }
 
-    .glitch-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.05),
-        rgba(0, 0, 0, 0.05) 1px,
-        transparent 1px,
-        transparent 2px
-      );
-      mix-blend-mode: multiply;
+    .container::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.imgur.com/Z4zwkpH.png') no-repeat;
+      background-size: contain;
+      opacity: 0.08;
       pointer-events: none;
-      animation: flicker 0.2s infinite;
-      z-index: 100;
     }
 
-    @keyframes flicker {
-      0% { opacity: 0.04; transform: scale(1); }
-      50% { opacity: 0.07; transform: scale(1.01); }
-      100% { opacity: 0.03; transform: scale(1); }
-    }
-
-    .notebook {
-      max-width: 800px;
-      margin: auto;
-      background-color: rgba(255,255,255,0.85);
-      padding: 40px;
-      border: 1px solid #bfa680;
-      box-shadow: 0 0 30px rgba(0,0,0,0.4);
-      border-radius: 10px;
-      position: relative;
-      animation: glitchIn 1.5s ease;
-    }
-
-    .date {
-      font-size: 20px;
+    h1 {
+      font-size: 36px;
       margin-bottom: 30px;
-      color: #6a4f37;
-      border-bottom: 1px dashed #8b6e4a;
-      padding-bottom: 10px;
+      color: #4b2e1d;
     }
 
-    @keyframes glitchIn {
-      0% {
-        transform: scale(1.2) rotateX(90deg);
-        opacity: 0;
-        filter: blur(5px);
-      }
-      100% {
-        transform: scale(1) rotateX(0deg);
-        opacity: 1;
-        filter: blur(0);
-      }
+    p {
+      font-size: 20px;
+      line-height: 2.1;
+      color: #3a2a20;
+    }
+
+    .quote {
+      margin-top: 40px;
+      font-style: italic;
+      font-size: 18px;
+      color: #5a4032;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
 </head>
 <body>
-  <div class="glitch-overlay"></div>
-  <div class="notebook">
-    <div class="date">یادداشت - ۱۹ اکتبر ۲۰۰۰ – ساعت ۳:۴۵ ظهر</div>
-    <p>همین چند دقیقه پیش بود که مثل همیشه، توی حیاط پشت خونه نشسته بودم؛ قلم‌مو توی دستم، بومِ سفید رو به روی من، و اون تصویری که هیچ‌وقت کامل نمی‌شه.</p>
-    <p>این تصویر، چهره نداره... چهره‌ش هیچ‌وقت توی ذهنم شکل نگرفت. شاید چون هیچ‌وقت اجازه نداد ببینمش...</p>
-    <p>شاید چون همیشه، دقیقاً از همون فاصله‌ای نگاهم می‌کرد که یک قدم جلوتر، همه چیز لو می‌رفت. انگار می‌دونه چقدر باید دور بمونه...</p>
-    <p>و من هنوز نمی‌دونم از کجا می‌فهمه...</p>
-    <p>وقتی امروز داشتم با نوک قلم، سایه‌های تیره روی بوم می‌کشیدم، برای اولین بار به وضوح دیدمش. پشت درخت، آن‌سوی خیابون. ایستاده بود.</p>
-    <p>آروم، بدون حرکت. موهای بلندش مثل پر کلاغ، در باد تکون می‌خورد و قد بلندش... فقط همین دوتا چیز بودن که از دور به چشم می‌اومدن...</p>
-    <p>و برای من، همین دو تکه‌ی گنگ، تمامش بودن.</p>
-    <p>دستم برای لحظه‌ای از روی بوم جدا شد. نه از ترس، از تکرار.</p>
-    <p>چند وقته داره دنبال می‌کنه منو؟ چند هفته؟ چند ماه؟ نمی‌دونم. فقط می‌دونم که هنوز به کسی چیزی نگفتم. حتی به استیو.</p>
-    <p>امروز زودتر برمی‌گرده خونه... باید نقاشی رو قایم کنم. نمی‌خوام ببینه. نمی‌خوام بدونه...</p>
-    <p>اون فقط الکی نگران میشه، شروع می‌کنه به محافظت کردن، کنترل کردن... مثل همیشه.</p>
-    <p>خودم می‌تونم از پسش بربیام... فقط یه سایه‌ست، نه؟ فقط یه مرد پشت درخت. نه صدا، نه چهره. فقط سکوت و سیاهی.</p>
-    <p>خب، دیگه وقتشه بلند شم. رنگ روی دست‌هام خشک شده. همه‌چی باید مثل همیشه به نظر بیاد. امشب نباید چیزی عوض بشه. نه برای استیو، نه برای من.</p>
+
+  <div class="container">
+    <h1>راز گشوده شد...</h1>
+    <p>
+      تو به آنچه بسیاری نمی‌رسند، رسیدی.<br>
+      «اصرار فاش می‌شوند» فقط یک رمز نبود، بلکه کلید دروازه‌ای بود به خاطراتی محو در مه زمان...<br><br>
+      در سکوت، حقیقت نهفته‌ست. و تو، آن را شنیدی.
+    </p>
+    <div class="quote">
+      "هر رازی، روزی راهی به نور می‌جوید..."
+    </div>
   </div>
+
 </body>
 </html>
