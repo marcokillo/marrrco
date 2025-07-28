@@ -24,10 +24,14 @@
       box-shadow: 0 0 25px rgba(0,0,0,0.4);
     }
 
-    .secret-text {
-      font-size: 24px;
-      filter: blur(6px);
-      transition: filter 0.4s ease;
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
     }
 
     .lock-btn {
@@ -38,27 +42,42 @@
       font-size: 18px;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 25px;
+      margin-top: 20px;
       transition: background 0.3s ease;
     }
 
     .lock-btn:hover {
       background-color: #3e2a1a;
     }
+
+    .error {
+      color: darkred;
+      margin-top: 15px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
 
   <div class="box">
-    <div class="secret-text">
-      اصرار فاش می‌شوند
-    </div>
-    <button class="lock-btn" onclick="goToNext()">باز کردن قفل</button>
+    <h2>برای باز شدن قفل، رمز را وارد کن:</h2>
+    <input type="text" id="codeInput" placeholder="عبارت را وارد کنید...">
+    <br>
+    <button class="lock-btn" onclick="checkCode()">باز کردن قفل</button>
+    <div class="error" id="errorText"></div>
   </div>
 
   <script>
-    function goToNext() {
-      window.location.href = "journal.html";
+    function checkCode() {
+      const correctCode = "اصرار فاش می‌شوند";
+      const userInput = document.getElementById("codeInput").value.trim();
+      const errorText = document.getElementById("errorText");
+
+      if (userInput === correctCode) {
+        window.location.href = "journal.html";
+      } else {
+        errorText.innerText = "عبارت وارد شده اشتباه است!";
+      }
     }
   </script>
 
