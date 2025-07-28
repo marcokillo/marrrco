@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>دسترسی محرمانه</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1f1f1f;
+      font-family: 'Special Elite', monospace;
+      direction: rtl;
+      color: #e3dfd1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #f5f0e1;
+      padding: 40px;
+      border: 5px double #3a2d1e;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.6);
+      text-align: center;
+      width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      font-size: 18px;
+      border: 2px solid #3a2d1e;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      direction: ltr;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      font-family: inherit;
+      background-color: #3a2d1e;
+      color: #f5f0e1;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: darkred;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>🔒 ورود به پرونده محرمانه</h2>
+    <input type="password" id="code" placeholder="کد عبور">
+    <br>
+    <button onclick="checkCode()">ورود</button>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById('code').value;
+      if (input === "1345") {
+        window.location.href = "journal.html";
+      } else {
+        document.getElementById('error').textContent = "کد اشتباه است.";
+      }
+    }
+  </script>
+</body>
+</html>
