@@ -42,6 +42,8 @@
       margin-bottom: 20px;
       direction: rtl;
       text-align: center;
+      background-color: #fffdf7;
+      color: #1a1a1a;
     }
 
     button {
@@ -69,7 +71,8 @@
 <body>
   <div class="box">
     <h2>🔒 ورود به دفترچه</h2>
-    <!-- تغییر نوع ورودی از password به text -->
+    
+    <!-- نوع ورودی TEXT گذاشتیم تا متن دیده بشه -->
     <input type="text" id="code" placeholder="عبارت عبور را وارد کنید">
     <br>
     <button onclick="checkCode()">ورود به دفترچه</button>
@@ -79,6 +82,8 @@
   <script>
     function checkCode() {
       const input = document.getElementById('code').value.trim();
+
+      // مقایسه دقیق با عبارت کلیدی
       if (input === "اصرار فاش می‌شوند") {
         window.location.href = "journal.html";
       } else {
