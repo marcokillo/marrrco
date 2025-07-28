@@ -2,94 +2,65 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
-  <title>دسترسی محرمانه</title>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <title>نامه قفل‌شده</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: #1f1f1f;
-      font-family: 'Special Elite', monospace;
+      font-family: 'Tahoma', sans-serif;
+      background: url('https://i.imgur.com/I3r6Xwr.jpg') no-repeat center center fixed;
+      background-size: cover;
       direction: rtl;
-      color: #e3dfd1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      text-align: center;
+      padding: 50px;
+      color: #3a2f2f;
     }
 
     .box {
-      background: #f5f0e1;
-      padding: 40px;
-      border: 5px double #3a2d1e;
+      background-color: rgba(255, 248, 220, 0.9);
+      border: 4px solid #5b3e2b;
+      padding: 60px 30px;
+      max-width: 500px;
+      margin: auto;
       border-radius: 12px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.6);
-      text-align: center;
-      width: 400px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
     }
 
-    h2 {
-      margin-bottom: 20px;
-      color: #1a1a1a;
+    .secret-text {
+      font-size: 24px;
+      filter: blur(6px);
+      transition: filter 0.4s ease;
     }
 
-    input {
-      padding: 10px;
-      width: 80%;
-      font-size: 18px;
-      border: 2px solid #3a2d1e;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      direction: rtl;
-      text-align: center;
-      background-color: #fffdf7;
-      color: #1a1a1a;
-    }
-
-    button {
-      padding: 10px 25px;
-      font-size: 18px;
-      font-family: inherit;
-      background-color: #3a2d1e;
-      color: #f5f0e1;
+    .lock-btn {
+      background-color: #5b3e2b;
+      color: #fff;
       border: none;
-      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
       cursor: pointer;
-      transition: 0.3s ease;
+      margin-top: 25px;
+      transition: background 0.3s ease;
     }
 
-    button:hover {
-      background-color: #5a4030;
-    }
-
-    .error {
-      color: darkred;
-      margin-top: 10px;
+    .lock-btn:hover {
+      background-color: #3e2a1a;
     }
   </style>
 </head>
 <body>
+
   <div class="box">
-    <h2>🔒 ورود به دفترچه</h2>
-    
-    <!-- نوع ورودی TEXT گذاشتیم تا متن دیده بشه -->
-    <input type="text" id="code" placeholder="عبارت عبور را وارد کنید">
-    <br>
-    <button onclick="checkCode()">ورود به دفترچه</button>
-    <div id="error" class="error"></div>
+    <div class="secret-text">
+      اصرار فاش می‌شوند
+    </div>
+    <button class="lock-btn" onclick="goToNext()">باز کردن قفل</button>
   </div>
 
   <script>
-    function checkCode() {
-      const input = document.getElementById('code').value.trim();
-
-      // مقایسه دقیق با عبارت کلیدی
-      if (input === "اصرار فاش می‌شوند") {
-        window.location.href = "journal.html";
-      } else {
-        document.getElementById('error').textContent = "عبارت عبور نادرست است.";
-      }
+    function goToNext() {
+      window.location.href = "journal.html";
     }
   </script>
+
 </body>
 </html>
