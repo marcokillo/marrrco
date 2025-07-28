@@ -40,12 +40,12 @@
       border: 2px solid #3a2d1e;
       border-radius: 5px;
       margin-bottom: 20px;
-      direction: ltr;
+      direction: rtl;
       text-align: center;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 10px 25px;
       font-size: 18px;
       font-family: inherit;
       background-color: #3a2d1e;
@@ -53,6 +53,11 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #5a4030;
     }
 
     .error {
@@ -63,20 +68,21 @@
 </head>
 <body>
   <div class="box">
-    <h2>🔒 ورود به پرونده محرمانه</h2>
-    <input type="password" id="code" placeholder="کد عبور">
+    <h2>🔒 ورود به دفترچه</h2>
+    <!-- تغییر نوع ورودی از password به text -->
+    <input type="text" id="code" placeholder="عبارت عبور را وارد کنید">
     <br>
-    <button onclick="checkCode()">ورود</button>
+    <button onclick="checkCode()">ورود به دفترچه</button>
     <div id="error" class="error"></div>
   </div>
 
   <script>
     function checkCode() {
-      const input = document.getElementById('code').value;
-      if (input === "1345") {
+      const input = document.getElementById('code').value.trim();
+      if (input === "اصرار فاش می‌شوند") {
         window.location.href = "journal.html";
       } else {
-        document.getElementById('error').textContent = "کد اشتباه است.";
+        document.getElementById('error').textContent = "عبارت عبور نادرست است.";
       }
     }
   </script>
