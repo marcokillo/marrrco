@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>دفتر خاطرات</title>
+
+  <!-- فونت فارسی اصلی -->
   <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
+
+  <!-- فونت عربی/فارسی شبیه دست‌نویس -->
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
+
   <style>
     body {
       background: url('https://e1.pxfuel.com/desktop-wallpaper/914/855/desktop-wallpaper-aged-paper-backgrounds-old-paper.jpg') no-repeat center center fixed;
@@ -12,41 +18,49 @@
       direction: rtl;
       margin: 0;
       padding: 0;
-      color: #2c1e13;
+      color: #000;
     }
 
     .overlay {
-      background: none;
+      background-color: rgba(255, 255, 255, 0.6); /* نیمه‌شفاف */
+      backdrop-filter: blur(1.5px); /* افکت شیشه‌ای */
       max-width: 800px;
       margin: 70px auto;
       padding: 60px 50px;
       position: relative;
-      line-height: 1.9;
-      font-size: 20px;
-      color: #2c1e13;
-    }
-
-    .overlay::before {
-      display: none;
+      line-height: 2.2;
+      font-size: 22px;
+      color: #000;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* سایه برای کادر */
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); /* سایه‌ی ظریف متن */
     }
 
     h2 {
       text-align: center;
-      font-size: 26px;
-      margin-bottom: 40px;
-      color: #4e3a28;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #000;
     }
 
     .handwriting {
-      font-family: 'Vazir', sans-serif;
+      font-family: 'El Messiri', sans-serif;
       white-space: pre-line;
+      opacity: 0;
+      animation: fadeIn 2.5s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     @media (max-width: 768px) {
       .overlay {
         margin: 30px 15px;
         padding: 30px 20px;
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   </style>
